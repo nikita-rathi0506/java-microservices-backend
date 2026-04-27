@@ -1,0 +1,66 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "FirstProgram",
+      "request": "launch",
+      "mainClass": "FirstProgram"
+    },
+    {
+      "type": "java",
+      "name": "Reverse",
+      "request": "launch",
+      "mainClass": "Reverse",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ReverseString",
+      "request": "launch",
+      "mainClass": "ReverseString",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ApnaBazarBackendApplication",
+      "request": "launch",
+      "mainClass": "com.apna.bazar.backend.Backend.ApnaBazarBackendApplication"
+    },
+    {
+      "type": "java",
+      "name": "Add",
+      "request": "launch",
+      "mainClass": "Add"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-DucartBackendApplication<Ducart-Backend>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.prashant.api.ecom.ducart.DucartBackendApplication",
+      "projectName": "Ducart-Backend",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ChatAppBackendApplication<chat-app-backend>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.prashant.chat_app_backend.ChatAppBackendApplication",
+      "projectName": "chat-app-backend",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ApnaBazarBackendApplication<ApnaBazarBackend>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.prashant.apna.bazar.ApnaBazarBackendApplication",
+      "projectName": "ApnaBazarBackend",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
