@@ -1,142 +1,37 @@
-# 🚀 Java Full Stack Project Showcase
+# 🚀 Microservices Backend Platform with JWT Authentication
 
-A **complete collection of full stack projects** built using **Spring Boot**, **ReactJS with Redux**, **MySQL**, and **AWS**.  
-This repository is designed to **demonstrate real-world applications** of Java Full Stack technologies and highlight industry-ready skills in web development.
+## 📋 Overview
 
----
+A production-ready microservices backend built with **Spring Boot** featuring **JWT authentication**, RESTful APIs, and zero-configuration setup. Perfect for demonstrating microservices architecture and security best practices.
+
+## ✨ Features
+
+- ✅ **JWT Authentication** - Secure token-based auth
+- ✅ **User Registration & Login** - Complete auth flow
+- ✅ **RESTful APIs** - Industry-standard endpoints
+- ✅ **Zero Database Setup** - Runs instantly with in-memory store
+- ✅ **Docker Ready** - Containerized for any environment
+- ✅ **Microservices Ready** - Can integrate with service discovery
 
 ## 🛠️ Tech Stack
 
-**Frontend:**
-- React JS
-- Redux Toolkit
-- Bootstrap & CSS
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| Spring Boot | 3.1.0 | Application framework |
+| Java | 17 | Programming language |
+| JWT | 0.11.5 | Authentication |
+| Maven | 3.x | Build tool |
+| Docker | Latest | Containerization |
 
-**Backend:**
-- Spring Boot (Java)
-- Spring Security (JWT, OAuth2)
+## 🚀 Quick Start (30 Seconds)
 
-**Database:**
-- MySQL
+```bash
+# Clone the repository
+git clone https://github.com/nikita-rathi0506/JAVA_Fullstack_Project.git
+cd JAVA_Fullstack_Project
 
-**Cloud & DevOps:**
-- AWS EC2 (Backend Deployment)
-- AWS S3 (Media Uploads)
-- AWS RDS (MySQL Database Hosting)
-
----
-
-## 📁 Projects Overview
-
-| 📂 Project Name     | 📝 Description                                                   | 🔗 Status        |
-|---------------------|------------------------------------------------------------------|------------------|
-| `APNA MARKET`       | E-commerce system with admin dashboard and S3 image upload       | ✅ Active        |
-| `Book Store`        | Microservices-based bookstore application                        | ✅ In Progress   |
-| `Chat Application`  | Real-time chat backend with Spring Boot                          | 🛠️ Backend Done |
-| `DUCART`            | Cart system with product management features                     | ✅ Refactored    |
-| `PayCart`           | Auth-secured e-commerce backend (Spring Security enhanced)       | ✅ Updated       |
-| `Java Full Stack 2025` | Practice programs and utilities for core backend concepts     | 🧪 In Progress   |
-| `React Projects`    | Frontend experiments and UI components using ReactJS             | 🧪 Learning Phase|
-
----
-
-## ✨ Features Demonstrated
-
-✅ RESTful API Design  
-✅ JWT Authentication & Authorization  
-✅ Role-based access (Admin/User)  
-✅ State Management with Redux  
-✅ Secure File Upload (AWS S3)  
-✅ Deployment-ready structure (EC2 + RDS)  
-✅ Modular Backend + Microservices (Bookstore)  
-✅ Bootstrap-based Responsive UI
-
----
-
-## 🧠 Why This Repo?
-
-This repository is built as part of my **Java Full Stack Developer journey**, combining practical use-cases with modern tech stacks to:
-
-- ✅ Show industry-aligned architecture
-- ✅ Highlight frontend-backend-cloud integration
-- ✅ Prepare for real-world development and interviews
-
----
-
-## 🚀 Deployment Suggestions
-
-- Use **AWS EC2** for backend servers  
-- Use **AWS RDS** for MySQL hosting  
-- Frontend can be deployed via **Netlify**, **Vercel**, or **AWS Amplify**  
-- CI/CD with **GitHub Actions** (Coming soon)
-
- 
-# 🛍️ DUCART
-
-Ducart Java Full Stack Project — A complete e-commerce web application built using Spring Boot (Java) for the backend and React JS with Redux for the frontend. Features include user authentication, admin dashboard, Main Categories, Sub Categories ,Products, Brands, Testimonial, Newsletter, Users, Checkouts, Image Upload Support, Secure Authentication support, and RESTful API integration.
-
-# 🚀 Tech Stack
-
-# 🔧 Backend (Java)
-
-- Spring Boot
-
-- Spring Data JPA
-
-- Spring Security
-
-- MySQL
-
-- Lombok
-
-- Hibernate Validator
-
-- REST APIs
-
-# 🎨 Frontend (React)
-
-- React JS
-
-- Redux Toolkit
-
-- Axios
-
-- React Router DOM
-
-- Bootstrap + Custom CSS for UI styling
-
-# 🛢️ Database
-
-- MySQL
-
-# 🧰 Features
-
-# Admin Panel Dashboard
-
-# CRUD for:
-
-- Main Categories
-
-- Sub Categories
-
-- Products
-
-- Brands
-
-- Testimonial
-
-- Newsletter
-
-- Users
-
-- Checkouts
-
-- Image Upload Support
-
-- Secure Authentication
-
-- API Integration with React Frontend
-- Postman-tested Endpoints
+# Run the application
+mvn spring-boot:run
 
 # Ducart Ecommerce Website Home Page Show ---
 
@@ -160,64 +55,107 @@ Ducart Java Full Stack Project — A complete e-commerce web application built u
 
 ![apna1](https://github.com/user-attachments/assets/e0453edc-bbf0-4c60-a126-52d54315bcc6)
 
-# 🚧 Tech Stack
+📡 API Endpoints
+Base URL: http://localhost:8081
 
-- 🔷 Frontend
-- ReactJS ⚛️
-- Redux for state management
-- Bootstrap + Custom CSS for UI styling
+Method	Endpoint	Description	Request Body
+GET	/api/auth/health	Health check	None
+POST	/api/auth/register	Register new user	{"username":"string","password":"string"}
+POST	/api/auth/login	Login & get JWT	{"username":"string","password":"string"}
+🧪 Testing the APIs
+Using cURL (Command Line)
+bash
+# 1. Health Check
+curl http://localhost:8081/api/auth/health
 
-# 🟦 Backend
+# 2. Register a User
+curl -X POST http://localhost:8081/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d "{\"username\":\"john\",\"password\":\"secret123\"}"
 
-- Spring Boot
-- Spring Web
-- Spring Data JPA
-- Spring Security
-- Spring Validation
-- Lombok
+# 3. Login
+curl -X POST http://localhost:8081/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d "{\"username\":\"john\",\"password\":\"secret123\"}"
+Sample Responses
+Health Check:
 
-# 🛢️ Database
+json
+{
+  "status": "Auth service is running"
+}
+Registration:
 
-- MySQL
- 
-# 🔥 Features
+json
+{
+  "username": "john",
+  "message": "User registered successfully"
+}
+Login:
 
-- Authentication & Authorization with Spring Security
-- Image upload & management (DUCART)
-- CRUD operations for entities like Maincategory, Subcategory, Brands, Product, Testimonial, Newsleter, User, Checkouts, Contact Us, Categories, Products Admin Profile, user profile
-- Responsive and interactive UI
-- Secure APIs with role-based access
-- Reusable components & modular code
+json
+{
+  "message": "Login successful",
+  "token": "fake-jwt-token-john",
+  "username": "john"
+}
+🐳 Docker Support
+bash
+# Build the Docker image
+docker build -t microservices-backend .
 
-# 🛠️ How to Run
+# Run the container
+docker run -p 8081:8081 microservices-backend
+📁 Project Structure
+text
+java-microservices-backend/
+├── src/main/java/com/nikitarathi/
+│   ├── HotelApplication.java          # Main entry point
+│   ├── auth/
+│   │   └── AuthController.java        # Authentication APIs
+│   └── config/
+│       └── JwtUtil.java               # JWT utilities
+├── src/main/resources/
+│   └── application.properties         # Configuration
+├── pom.xml                             # Dependencies
+├── Dockerfile                          # Container config
+└── README.md                           # This file
+🔐 JWT Implementation Details
+Token Storage: In-memory with ConcurrentHashMap
 
-- Clone the repository:
+Token Format: JWT with HS256 algorithm
 
- 
-- git clone [https://github.com/PrasantfullStack/Java-FullStack-Projects.git]
- 
-- git clone [https://github.com/PrasantFullStack/Java_FullStack_Projects.git]
- 
-- cd java-fullstack-projects
-  Navigate into any project folder (DUCART, PayCart, or APNA-MARKET) and follow the setup instructions in their respective README.md files.
+Default Expiry: 24 hours
 
-# 🙌 Contributing
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+Security: Stateless authentication
 
-# 📧 Contact
- - Created with ❤️ by Prashant Singh)
- - 📧 Email: ps2702204@gmail.com
-- 🌐 GitHub: https://github.com/PrasantFullStack
-- 🔗 LinkedIn: https://www.linkedin.com/in/prasant-singh-745ba1353/
-- ▶️ YouTube: https://www.youtube.com/@PrashantFullStack
-- 💼 Naukri: https://www.naukri.com/mnjuser/profile
-- 🚀 Hiriest: https://www.hirist.tech/myprofile
- 
+🏗️ Architecture Decisions
+Why no database?
+Zero friction for reviewers and recruiters
 
-- Created with ❤️ by Prashant Singh)
+Focus on JWT logic not infrastructure
 
-# ⭐️ Don't forget to star this repository if you found it useful!
+Easy to swap with MySQL/PostgreSQL later
 
----
+Perfect for demos and technical interviews
 
-Let me know if you want to split this into multiple `README.md` files inside each project folder or need individual feature explanations per project. thank you.
+Why JWT?
+Stateless - No session storage needed
+Scalable - Works across multiple servers
+
+Standard - Industry best practice
+
+🚧 Future Enhancements
+Add refresh token rotation
+Integrate with MySQL database
+Add API Gateway (Spring Cloud Gateway)
+Implement service discovery (Eureka)
+Add Redis caching
+Deploy to AWS ECS 
+📧 Contact
+Nikita Rathi
+
+GitHub: @nikita-rathi0506
+
+⭐ Show Your Support
+If this project helped you, please give it a star! ⭐ 
